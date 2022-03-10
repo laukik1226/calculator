@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .all{
+      width: 300px;
+      height: 500px;
+      margin: auto;
+      margin-top: 70px;
+      display: grid;
+      grid-template-rows: 25% auto;
+      box-shadow: 0 0 10px 5px black ;
+      border-radius: 10px;
+
+    }
+    .screen{
+      background-color:darkslategrey;
+      border-radius: 8px 8px 0 0q;
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 30px;
+      font-size: 40px;
+      text-align: right;
+      overflow:auto;
+      
+      
+    }
+    .btn{
+      display: grid;
+      grid-template-columns: auto auto auto auto ;
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding: 10px 0;
+      justify-content: space-around;
+      background-color:gray;
+    }
+    
+    
+    .btn input{
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn input:hover{
+      color:white;
+      background-color: black;
+    }
+    
+    
+    .btn{
+      border-radius: 0 0 10px 10px ;
+    }
+    .symbol{
+      background-color:navajowhite;
+    }
+    .symbol:hover{
+      background-color:darkgoldenrod;
+    }
+    
+    
+    
+  </style>
+</head>
+<body>
+  <div class="all">
+    <div class="screen">
+      <p id="num"></p>
+    </div>
+    <div class="btn">
+      <input class="symbol" type="button"  value="AC" onclick="ac()">
+      <input class="symbol" type="button" value="c" onclick="del()">
+      <input type="button" value="%" onclick="show('%')">
+      <input type="button" value="-" onclick="show('-')">
+      <input type="button" value="7" onclick="show('7')">
+      <input type="button" value="8" onclick="show('8')">
+      <input type="button" value="9" onclick="show('9')">
+      <input type="button" value="*" onclick="show('*')">
+      <input type="button" value="4" onclick="show('4')">
+      <input type="button" value="5" onclick="show('5')">
+      <input type="button" value="6" onclick="show('6')">
+      <input type="button" value="+" onclick="show('+')">
+      <input type="button" value="1" onclick="show('1')">
+      <input type="button" value="2" onclick="show('2')">
+      <input type="button" value="3" onclick="show('3')">
+      <input type="button" value="/" onclick="show('/')">
+      <input type="button" value="0" onclick="show('0')">
+      <input type="button" value="00" onclick="show('00')">
+      <input type="button" value="." onclick="show('.')">
+      <input type="button" value="=" onclick="eqal('=')">
+
+    </div>
+  </div>
+    
+</body>
+  <script>
+    
+    function show(a){
+      document.getElementById('num').innerHTML+=a
+      
+    }
+    function ac(){
+      document.getElementById('num').innerHTML=' ';
+   }
+    function del(){
+      document.getElementById('num').innerHTML=num.innerHTML.slice(0,-1)
+      
+    }
+    function eqal(){
+      let a = document.getElementById("num");
+      a.innerText=eval(a.innerText);
+          
+          
+
+    }
+  
+
+    
+  </script>
+</html>
